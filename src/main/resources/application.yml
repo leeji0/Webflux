@@ -1,0 +1,34 @@
+#spring.r2dbc.url=r2dbc:h2:mem:///userdb
+#spring.r2dbc.url=r2dbc:postgresql://localhost:5432/userdb
+#spring.r2dbc.url= r2dbc:mysql://localhost:3306/userdb?useUnicode=true&characterEncoding=utf8
+#spring.r2dbc.username=root
+#spring.r2dbc.password=jiyounglee
+webclient:
+  h2-console-port: 8081
+
+server:
+  port: 8092
+
+spring:
+  r2dbc:
+#    url: r2dbc:mysql//localhost:3306/userdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false&useLocalSessionState=true
+    url: r2dbc:h2:mem:///userdb
+    username:
+    password:
+#    pool:
+#      enabled: false #true? ?? ???
+#      max-size: 20
+#      validation-query: SELECT 1
+#      initial-size: 5
+#      max-idle-time: 30m
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+
+logging:
+  level:
+    org:
+      springframwork:
+        r2dbc: DEBUG
+debug: true
